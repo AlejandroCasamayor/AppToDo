@@ -18,11 +18,13 @@ function pintarTareas () {
     SectionTareas.innerHTML= "";
     const tareas = JSON.parse(localStorage.getItem('tarea'))
     for (let tarea of tareas) {
+        console.log(cont)
         const articleTarea = document.createElement('article')
         const ptitulo = document.createElement('p')
         const deleteButton = document.createElement('button')
 
         deleteButton.innerText= 'ELIMINAR'
+        deleteButton.dataset.idtarea
         ptitulo.innerText = tarea.titulo
 
         articleTarea.append(ptitulo,deleteButton)
