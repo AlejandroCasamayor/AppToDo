@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS';
+}
+.wrapper {
+    width: 700px;
+    margin: 0 auto;
+}
+.wrapper .formAñadir {
+    padding: 1.5em;
+    background-color: grey;
+}
+.wrapper .filtros {
+    padding: 1.15em;
+    background-color: black;
+}
+.wrapper .tareas article {
+    height: 100px;
+    background-color: #E9967A;
+    display: block;
+    border-bottom: 2px solid black;
+}
+article p {
+    text-transform: uppercase;
+    vertical-align: middle;
+    padding-top: 40px;
+    padding-left: 20px;
+    font-weight: bold;
+    width: 600px;
+    height: 100%;
+    float: left;
+}
+article button {
+    float: right;
+    height: 100%;
+    border: none;
+    width: 100px;
+    background-color: red;
+    font-weight: BOLDER;
+    cursor: pointer;
+}
+footer {
+    padding: 1.15em;
+    background-color: black;
+    color: white;
+}
