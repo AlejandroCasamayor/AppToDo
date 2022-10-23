@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/model.js"></script>
 </head>
 <body>
     <div class="wrapper">
-        <form action="" class="formAñadir">
-            <input type="text" name="inputTarea" id="inputTarea">
-                <select name="prioridadTarea" id="prioridadTarea">
-                    <option>Selecciona una prioridad</option>
-                    <option value="Urgente">Urgente</option>
-                    <option value="Diaria">Diaria</option>
-                    <option value="Mensual">Mensual</option>
-                </select>
+        <div class="divAddTarea">
+            <input type="text" id="inputTarea">
+            <select id="prioridadTarea">
+                <option>Selecciona una prioridad</option>
+                <option value="Urgente">Urgente</option>
+                <option value="Diaria">Diaria</option>
+                <option value="Mensual">Mensual</option>
+            </select>
             <button type="" value="" id="btnGuardar">Guardar tarea</button>
-        </form>
+        </div>
         <form action="" class="filtros">
                 <select name="prioridadTarea" id="prioridadTarea">
                     <option>Selecciona una prioridad</option>

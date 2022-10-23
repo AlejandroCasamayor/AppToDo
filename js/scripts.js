@@ -1,21 +1,10 @@
-var listaTareas = new Array();
-listaTareas = [
-    {'idTarea':0, 'titulo':'Estudiar Javascript', 'prioridad':'urgente'},
-    {'idTarea':1, 'titulo':'Dormir', 'prioridad':'diaria'},
-    {'idTarea':2, 'titulo':'Salir a comer', 'prioridad':'mensual'}
-]
 const inputTarea = document.getElementById('inputTarea')
 const btnGuardar = document.getElementById('btnGuardar')
-btnGuardar.addEventListener('click',() => {
-    const texto = inputTarea.value
-    const strTexto = JSON.stringify
-    localStorage.setItem('tarea',texto)
-    
-})
+const SectionTareas = document.getElementById('SectionTareas')
 
 
 function addTarea (arrTareas,pTitulo,pPrioridad){
-    const cont = arrTareas.length +1;
+    const cont = arrTareas.length;
     let tareaCreada= 
         {
         'idTarea': cont,
@@ -23,22 +12,26 @@ function addTarea (arrTareas,pTitulo,pPrioridad){
         'prioridad': pPrioridad
     }
     arrTareas.push(tareaCreada)
-} 
-/* addTarea(listaTareas,'COMER','urgente')
-addTarea(listaTareas,'disfrutar','media') */
+}
 
-
-function pintarTareas (arrTareas) {
-    /* section = ''; */
-    for (let tarea of arrTareas) {
-        const section = document.getElementById('SectionTareas')
+function pintarTareas () {
+    const tareas = JSON.parse(localStorage.getItem('tarea'))
+    console.log(tareas)
+    for (let tarea of tareas) {
         const articleTarea = document.createElement('article')
         const ptitulo = document.createElement('p')
         const deleteButton = document.createElement('button')
         deleteButton.innerText= 'ELIMINAR'
         ptitulo.innerText = tarea.titulo
+        
         articleTarea.append(ptitulo,deleteButton)
-        section.append(articleTarea)
+        SectionTareas.append(articleTarea)
     }
 }
-pintarTareas(listaTareas) 
+
+btnGuardar.addEventListener('click',() => {
+    addTarea(listaTareas,inputTarea.value,'urgente')
+    const strTexto = JSON.stringify(listaTareas)
+    localStorage.setItem('tarea',strTexto)
+    pintarTareas()
+})
